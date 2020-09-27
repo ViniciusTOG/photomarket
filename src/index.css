@@ -1,13 +1,119 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  width: 100vw;
+  height: 4rem;
+  background: rgb(236, 109, 59);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.header p {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.header span {
+  font-size: 16px;
+  vertical-align: top;
+}
+
+.photos {
+  width: 100vw;
+  display: grid;
+  grid-gap: 3px;
+  grid-auto-rows: 200px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-flow: dense;
+}
+
+.photos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.image-container {
+  position: relative;
+}
+
+.cartIcon {
+  position: absolute;
+  color: rgb(16, 151, 241);
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.heartIcon {
+  position: absolute;
+  color: rgb(245, 73, 73);
+  left: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.cart-element img {
+  width: 40%;
+  margin-left: 10px;
+}
+
+.cart-element {
+  display: flex;
+  width: 60vw;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  padding: 5px;
+}
+
+.cart h1,
+h2,
+h3 {
+  margin: 30px;
+}
+
+.cart-div {
+  display: flex;
+  align-items: center;
+}
+
+.cart-element i {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.place-btn {
+  width: 7rem;
+  font-size: 1rem;
+  background: white;
+  border: 1px solid black;
+  padding: 1rem;
+  cursor: pointer;
+  margin-bottom: 30px;
 }
