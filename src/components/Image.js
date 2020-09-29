@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Context } from "../context/Context";
+import useHover from "../hooks/useHover";
 
 function Image({ img, className }) {
-  const [hovered, setHovered] = useState(false);
+  const [hovered, ref] = useHover();
   const { cartItems, addToCart, removeFromCart, toggleFavorite } = useContext(
     Context
   );
@@ -44,11 +45,7 @@ function Image({ img, className }) {
   }
 
   return (
-    <div
-      className={`${className} image-container`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+    <div className={`${className} image-container`} ref={ref}>
       <img src={img.url} alt={img.id} />
       {heartIcon(img)}
       {cartIcon(img)}
